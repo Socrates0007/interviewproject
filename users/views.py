@@ -19,9 +19,12 @@ def home_view(request):
     }
     return Response(routes)
 
-@api_view(['POST'])
+@api_view(['GET','POST'])
 def users_view(request):
-
+    if request.method=="GET":
+        users=User.objects.all()
+        serializer_class=UserModelSerializer(users,many=True)
+        return Response(serializer_class.data)
     if request.method=='POST':
         serializer_class=UserModelSerializer(data=request.data)
         if serializer_class.is_valid():
