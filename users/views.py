@@ -5,8 +5,7 @@ from .models import User
 from .serializers import UserModelSerializer
 
 # Create your views here.
-
-
+#get all directories
 @api_view(["GET"])
 def home_view(request):
     routes={
@@ -18,6 +17,11 @@ def home_view(request):
 
     }
     return Response(routes)
+
+
+
+
+
 
 @api_view(['GET','POST'])
 def users_view(request):
