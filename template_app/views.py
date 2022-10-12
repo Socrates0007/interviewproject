@@ -8,7 +8,7 @@ from .serializers import TemplateModelSerializer
 
 from .models import Template
 
-# Create your views here. good
+# Create your views here. good hah
 
 @api_view(["GET","POST"])
 @permission_classes([IsAuthenticated])
